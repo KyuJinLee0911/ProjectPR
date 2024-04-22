@@ -22,8 +22,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     LayerMask groundLayer;
 
+    private Transform cameraTransform;
+
+    float moveSpeed = 0.15f;
+
     private void Awake()
     {
+        cameraTransform = Camera.main.transform;
         action = new PlayerControl();
         moveAction = action.Player.Move;
         jumpAction = action.Player.Jump;
@@ -34,9 +39,6 @@ public class PlayerController : MonoBehaviour
     private void OnEnable()
     {
         moveAction.Enable();
-        moveAction.started += Started;
-        moveAction.performed += Performed;
-        moveAction.canceled += Canceled;
         jumpAction.Enable();
 
         jumpAction.performed += JumpPerformed;
@@ -48,34 +50,19 @@ public class PlayerController : MonoBehaviour
         Vector2 keyboard_vector = moveAction.ReadValue<Vector2>();
         MOVE(keyboard_vector.x, keyboard_vector.y);
 
+        // Raycast를 통해 땅에 닿았는지 체크.
+        // Raycast의 시작지점을 0.1만큼 띄운 이유는 발 밑에서 바로 레이를 나가게 하면 가끔 울퉁불퉁한 지형에서 땅을 밟고 있음에도 밟고있지 않다고 판정이 날 때가 있었음
+        // 따라서 0.1만큼 띄우고 Ray의 길이를 0.2로 해서 울퉁불퉁한 지형에서도 안정적으로 땅 밟고 있는 것을 체크할 수 있도록 함
         hasTouchedGround = Physics.Raycast(transform.position + new Vector3(0, 0.1f, 0), Vector3.down, raycastDist, groundLayer);
-        Debug.Log(hasTouchedGround);
     }
 
     private void OnDisable()
     {
         moveAction.Disable();
-        moveAction.started -= Started;
-        moveAction.performed -= Performed;
-        moveAction.canceled -= Canceled;
         jumpAction.Disable();
         jumpAction.performed -= JumpPerformed;
     }
 
-    void Started(InputAction.CallbackContext context)
-    {
-        Debug.Log("started!");
-    }
-
-    void Performed(InputAction.CallbackContext context)
-    {
-        Debug.Log("performed!");
-    }
-
-    void Canceled(InputAction.CallbackContext context)
-    {
-        Debug.Log("canceled!");
-    }
 
     void MOVE(float _x, float _z)
     {
@@ -86,9 +73,10 @@ public class PlayerController : MonoBehaviour
 
         float square = _x >= 0 ? _x * _x : -1 * (_x * _x);
         square = isForward ? square : -square;
-        Quaternion targetRotation = Quaternion.Euler(0, transform.rotation.y + square * 90, 0);
+        Quaternion targetRotation = Quaternion.Euler(0, transform.rotation.y + square * 90 + cameraTransform.rotation.eulerAngles.y, 0);
+        Debug.Log(cameraTransform.rotation.y);
 
-        transform.position = new Vector3(transform.position.x + _x * 0.1f, transform.position.y, transform.position.z + _z * 0.1f);
+        transform.position += transform.forward * _z * moveSpeed + transform.right * _x * moveSpeed;
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 0.2f);
     }
 
