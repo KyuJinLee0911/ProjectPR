@@ -15,7 +15,6 @@ public class Player : MonoBehaviour, IMoveable, IDamageable, IUnitStats
     public PlayerClass playerClass = PlayerClass.PC_BEGINNER;
 
     public float MoveSpeed { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
-    public float Acceleration { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
     public float Health { get => playerData.Hp; set { } }
     public int Defence { get => playerData.Defence; set { } }
     public float Stamina { get { return playerData.Stamina; } set { } }
