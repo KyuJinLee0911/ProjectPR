@@ -23,7 +23,7 @@ public class PlayerData : ScriptableObject
 
     [SerializeField]
     private float stamina;
-    public float Stamina { get { return stamina; } }
+    public float Stamina { get { return stamina; } set => stamina = value; }
 
     [SerializeField]
     private int defence;

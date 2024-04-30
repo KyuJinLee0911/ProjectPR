@@ -49,20 +49,54 @@
                     "processors": "",
                     "interactions": "Press",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "QuickSlot1",
+                    "type": "Button",
+                    "id": "ec9bf7b7-ff6e-4a69-8f03-be1c3da94584",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "QuickSlot2",
+                    "type": "Button",
+                    "id": "492b272d-c0d1-46b5-90ec-2132348a519b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "QuickSlot3",
+                    "type": "Button",
+                    "id": "d7e86b03-31f7-49c3-b7bd-a1b1c21a72e6",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "QuickSlot4",
+                    "type": "Button",
+                    "id": "8a771bff-3811-44c0-839e-0393057bcc5b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "QuickSlot5",
+                    "type": "Button",
+                    "id": "edfd2f0c-162d-4f07-996e-1b1d5415f1d6",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
-                {
-                    "name": "",
-                    "id": "25c08005-a4a5-4958-9f3a-4fbf9806df89",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
                 {
                     "name": "2D Vector",
                     "id": "b6ddab25-3255-4592-a8a9-cb871a55270a",
@@ -80,7 +114,7 @@
                     "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "PC",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -91,7 +125,7 @@
                     "path": "<Keyboard>/s",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "PC",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -102,7 +136,7 @@
                     "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "PC",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -113,7 +147,7 @@
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "PC",
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
@@ -124,7 +158,7 @@
                     "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "PC",
                     "action": "Jump",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -135,7 +169,7 @@
                     "path": "<Pointer>/delta",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "PC",
                     "action": "Look",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -146,7 +180,7 @@
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "PC",
                     "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -157,13 +191,85 @@
                     "path": "<Keyboard>/shift",
                     "interactions": "",
                     "processors": "",
-                    "groups": "",
+                    "groups": "PC",
                     "action": "Sprint",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "aaa99b85-ea2a-46db-89d0-804c7b510046",
+                    "path": "<Keyboard>/1",
+                    "interactions": "Tap",
+                    "processors": "",
+                    "groups": "PC",
+                    "action": "QuickSlot1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c7a17234-157b-49d8-8b8d-c2067c817d16",
+                    "path": "<Keyboard>/2",
+                    "interactions": "Tap",
+                    "processors": "",
+                    "groups": "PC",
+                    "action": "QuickSlot2",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7c06aa83-abb6-4831-9026-9e4d7ab86849",
+                    "path": "<Keyboard>/3",
+                    "interactions": "Tap",
+                    "processors": "",
+                    "groups": "PC",
+                    "action": "QuickSlot3",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bc089dc9-7ddd-4e6a-a591-59f5031f1ab4",
+                    "path": "<Keyboard>/4",
+                    "interactions": "Tap",
+                    "processors": "",
+                    "groups": "PC",
+                    "action": "QuickSlot4",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "79c74d76-18ea-46e3-807f-aee37ec381e5",
+                    "path": "<Keyboard>/5",
+                    "interactions": "Tap",
+                    "processors": "",
+                    "groups": "PC",
+                    "action": "QuickSlot5",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
             ]
         }
     ],
-    "controlSchemes": []
+    "controlSchemes": [
+        {
+            "name": "PC",
+            "bindingGroup": "PC",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Mouse>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
 }

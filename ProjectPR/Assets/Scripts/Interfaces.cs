@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CreatureInterfaces : MonoBehaviour
+public class Interfaces : MonoBehaviour
 {
 
 }
@@ -60,4 +60,11 @@ public interface IUnitStats
     public int Strength { get; set; }
     public int Dexerity { get; set; }
     public int Inteligence { get; set; }
+}
+
+public interface ISwitchable
+{
+    public bool IsActive { get; }
+    public void Activate();
+    public void Deactivate();
 }
